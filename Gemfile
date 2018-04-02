@@ -7,8 +7,8 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 
 gem 'pry-byebug'
 gem 'pry-rails'
-gem 'better_errors'
-gem 'binding_of_caller'
+#gem 'better_errors'
+#gem 'binding_of_caller'
 
 gem 'bcrypt',         '3.1.11'
 gem 'bootstrap-sass', '3.3.7'

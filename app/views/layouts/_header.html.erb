@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+      <%= link_to "MusicApp", '#', id: "logo" %>
+      <%= text_field_tag :search %><!--あとで検索するparamsを与える-->
+      <%= submit_tag "検索" %>
+      <nav>
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "ピックアップ", '#' %></li>
+          <li><%= link_to "ランキング", '#' %></li>
+          <li><%= link_to "ロック", '#' %></li> <!--カテゴリー１-->
+          <li><%= link_to "ギターロック", '#' %></li> <!--カテゴリー2-->
+          <li><%= link_to "ポストロック", '#' %></li> <!--カテゴリー3-->
+          <li><%= link_to "プログレ", '#' %></li> <!--カテゴリー4-->
+          <li><%= link_to "エモーショナル", '#' %></li> <!--カテゴリー5-->
+        </ul>
+      </nav>
+  </div>
+
+</header>
