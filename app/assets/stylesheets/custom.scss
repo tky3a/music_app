@@ -1,6 +1,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto; //はみ出た部分をオートで整形
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center; //これ必要か怪しい
+}
+
+
+/* category */
+.category {
+  overflow: auto; //はみ出た部分をオートで整形
+}
+
 
 /* footer */
 .footer{
