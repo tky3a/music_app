@@ -6,8 +6,21 @@
     Youtube Iframe
     ここに動画表示（中央）
 
+    <% @videos.shuffle.first(1).each do |video| %>
+    <%=link_to "#{video.artist_name}","videos/#{video.id}" %>
+    <% iframe = content_tag(
+      :iframe,
+      '', # empty body
+      width: 560,
+      height: 315,
+      src: "https://www.youtube.com/embed/#{video.youtube_id}",
+      frameborder: 4,
+      allowfullscreen: true
+    ) %>
+    <%= content_tag(:div, iframe, class: 'youtube-container') %>
+    <% end %>
+  </div>
 
-</div>
 
 
 

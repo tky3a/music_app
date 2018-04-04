@@ -1,3 +1,37 @@
-<%= @videos.each do |video| %>
-  video.youtube_id
-<% end %>
+<div class="row">
+  <div class="show-container">
+
+
+
+
+
+<h1><%= link_to("ホーム","/") %> / <%= @video.artist_name %></h1>
+<h1><%= @video.artist_name %></h1>
+<h1><%= @video.music_name %></h1>
+
+
+  <div class="show-iframe">
+
+<% iframe = content_tag(
+:iframe,
+'', # empty body
+width: 420,
+height: 315,
+src: "https://www.youtube.com/embed/#{@video.youtube_id}",
+frameborder: 4,
+allowfullscreen: true
+) %>
+<!--↓のコードで動画のフレームを表示している-->
+<%= content_tag(:div, iframe, class: 'youtube-container') %>
+
+<!--サムネイル取得方法
+
+<img src="http://img.youtube.com/vi/hTWKbfoikeg/0.jpg" alt="alt here..." />
+-->
+
+<h1><%=link_to @video.artist_name + 'の曲',"#" %></h1>
+#アーティスト毎のYoutube動画を収集したページを追加予定
+
+</div>
+  </div>
+</div>
