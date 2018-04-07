@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
+    @video = Video.find_by(id: params[:id])
   end
 
   def new
@@ -19,6 +19,27 @@ class VideosController < ApplicationController
         render 'new'
       end
   end
+
+#page link
+  def rock
+  end
+
+  def gt_rock
+  end
+
+  def emo
+  end
+
+  def progre
+  end
+
+  def post_rock
+  end
+
+  def alterna
+  end
+
+
 
  #strongparams
   private
