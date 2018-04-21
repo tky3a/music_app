@@ -11,5 +11,4 @@ module VideosHelper
     )
     content_tag(:div, iframe, class: 'youtube-container')
   end
-
 end

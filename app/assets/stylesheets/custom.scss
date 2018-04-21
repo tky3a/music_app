@@ -8,19 +8,23 @@
   box-sizing:         border-box;
 }
 
+/* mixins, valiables, etc */
+$light-gray: #777;
+$gray-midium-light: #eaeaea;
 
-html {
-  /* 縦スクロールのみ */
-  overflow-y: scroll;
-}
 
 body {
-  padding-top: 60px;
+  padding-top: 70px;
+  // padding-top: ページ上部にxxピクセルの余白を追加
+  .default-height{
+    padding-top: 70px;
+  }
 }
 
 section {
-  /* はみ出た部分をブラウザに合った表示にしてくれる */
   overflow: auto;
+  // overflow: 要素のボックスからはみ出た部分をどう扱うか を指定
+  // autoオプション: ブラウザにより表示が変わる（基本的にはスクロールできる状態に）
 }
 
 textarea {
@@ -84,23 +88,6 @@ p {
 
 }
 
-/* universal */
-
-body {
-  padding-top: 60px;
-}
-
-section {
-  overflow: auto; //はみ出た部分をオートで整形
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-}
 
 
 /* category */

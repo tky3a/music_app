@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+
+
   def index
     @videos = Video.all
   end
@@ -22,6 +24,7 @@ class VideosController < ApplicationController
 
 #page link
   def rock
+    # if文使えば実装できる？: もしrockというカテゴリーが含まれている場合each do + iframe表示にする
   end
 
   def gt_rock

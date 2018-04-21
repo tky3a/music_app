@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'videos#index'
+
+  get '/signup', to: 'users#new'
+
   get '/alterna', to: 'categories#alterna'
   #
   get '/emo', to: 'categories#emo'
@@ -12,11 +16,8 @@ Rails.application.routes.draw do
   get '/progre', to:'categories#progre'
 
   # resources :categories
-
-  get 'videos/new'
-
-  root 'videos#index'
   resources :videos
+  resources :users
 
 
 end
