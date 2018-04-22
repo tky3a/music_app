@@ -1,0 +1,12 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation"><!--bootstrap(CSSで整形必須)-->
+    <div class="alart alart-danger"><!--bootstrapのアラートを表示するクラスとエラーを赤く表示するクラス(CSSで整形必須)-->
+      The form containts <%= pluralize(@user.errors.count, "error" )%>.
+    </div>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
