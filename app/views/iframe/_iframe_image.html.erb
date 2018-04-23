@@ -1,0 +1,14 @@
+<% @videos.each do |video| %>
+    <p><%= link_to "#{video.artist_name}","videos/#{video.id}" %></p>
+    <p><%= link_to "#{video.music_name}","videos/#{video.id}" %></p>
+    <p><% iframe = content_tag(
+      :iframe,
+      '', # empty body
+      width: 130,
+      height: 100,
+      src: "https://i.ytimg.com/vi/#{video.youtube_id}/1.jpg",
+      frameborder: 0,
+      allowfullscreen: true
+    ) %>
+    <%= content_tag(:div, iframe, class: 'youtube-container-cate') %></p>
+<% end %>
