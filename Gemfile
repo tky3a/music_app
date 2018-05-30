@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 
+#認証機能
+gem 'devise'
+gem 'omniauth-twitter'
+
 gem 'rails', '~> 5.1.4'
 
 gem 'mysql2', '>= 0.3.18', '< 0.5'

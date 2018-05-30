@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  #例外でcollbaksする場合は、omniauth_collbacksコントローラーを使う
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks"}
+
   root 'videos#index'
 
-  get '/signup', to: 'users#new'
+  # get '/signup', to: 'users#new'
 
   get '/alterna', to: 'categories#alterna'
   #
@@ -17,7 +20,7 @@ Rails.application.routes.draw do
 
   # resources :categories
   resources :videos
-  resources :users
+  # resources :users
 
 
 end
