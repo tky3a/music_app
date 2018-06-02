@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180602041451) do
+ActiveRecord::Schema.define(version: 20180602043452) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", default: "", null: false
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 20180602041451) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "video_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "video_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_video_categories_on_category_id"
+    t.index ["video_id"], name: "index_video_categories_on_video_id"
+  end
+
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "youtube_id"
     t.string "artist_name"
@@ -55,4 +64,6 @@ ActiveRecord::Schema.define(version: 20180602041451) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "video_categories", "categories"
+  add_foreign_key "video_categories", "videos"
 end
