@@ -285,4 +285,6 @@ Devise.setup do |config|
   config.omniauth :twitter, "ASkzeTxi9PSZE0AAnVfBbtNfX", "DmlnKiQ58q67w2Sj0SN8TP350fP4FMYWAA9C1XHrTyinaiUJY8"
   #mailer設定
   config.mailer_sender = "tkyy.tky@gmail.com"
+  # timeout設定
+  config.timeout_in = 10.minutes
 end

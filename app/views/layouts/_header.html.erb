@@ -7,7 +7,7 @@
           <%= submit_tag "検索" %>
         <!--ログインしている場合-->
           <% if user_signed_in? %>
-          <strong><%= link_to current_user.username, pages_show_path %></strong>
+          <strong><%= link_to current_user.username, users_path %></strong>
           <%= link_to "プロフィール", edit_user_registration_path %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         <!--ログインしていない場合-->
