@@ -15,9 +15,13 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
       if @video.save
-        redirect_to @video
-      else
-        render 'new'
+        @category = Category.find_by(name: params[:category][:name])#categoryのnameを取得
+        @video_cate = VideoCategory.new(video_id: @video.id, category_id: @category.id)#video_idとcategory_id取得
+        if @video_cate.save
+          redirect_to @video
+        else
+          render 'new'
+        end
       end
   end
 
@@ -46,6 +50,6 @@ class VideosController < ApplicationController
  #strongparams
   private
     def video_params
-        params.require(:video).permit(:artist_name, :youtube_id, :music_name)
+        params.require(:video).permit(:artist_name, :youtube_id, :music_name, { :category_id => [] })
     end
 end

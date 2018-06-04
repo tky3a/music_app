@@ -2,12 +2,18 @@
   <div class="container">
       <%= link_to "MusicApp", root_path, id: "logo" %>
       <div class="row">
-        <div class="col-md-3">
-          <%= text_field_tag :search, "",class: 'form-control' %><!--あとで検索するparamsを与える-->
-          <%= submit_tag "検索" %>
+        <div class="col-md-6">
+          <div class="container">
+            <form class="form-inline">
+            <%= text_field_tag :search, "", class: "form-control", size: 6*5 %><!--あとで検索するparamsを与える-->
+            <%= submit_tag "音楽検索"%>
+            </form>
+          </div>
+
+          <%= link_to "全ユーザー", users_path %>
         <!--ログインしている場合-->
           <% if user_signed_in? %>
-          <strong><%= link_to current_user.username, users_path %></strong>
+          <strong><%= link_to current_user.username, current_user %></strong>
           <%= link_to "プロフィール", edit_user_registration_path %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         <!--ログインしていない場合-->

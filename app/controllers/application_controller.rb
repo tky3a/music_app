@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
 
   #ログイン時にusersのshowに飛ばす
   def after_sign_in_path_for(resource)
-    users_path
+    # users_path
+    current_user
   end
 
   private

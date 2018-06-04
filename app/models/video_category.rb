@@ -1,4 +1,4 @@
 class VideoCategory < ApplicationRecord
-  belongs_to :video
-  belongs_to :category
+  belongs_to :video#, optional: true
+  belongs_to :category#, optional: true
 end
