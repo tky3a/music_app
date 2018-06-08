@@ -18,11 +18,10 @@ class VideosController < ApplicationController
         # @category = Category.find_by(name: params[:category][:name])#categoryのnameを取得
         # @video_cate = VideoCategory.new(video_id: @video.id, category_id: @category.id)#video_idとcategory_id取得
         # if @video_cate.save
-        #   redirect_to @video
+          redirect_to @video
         else
           render 'new'
         end
-      # end
   end
 
 #page link

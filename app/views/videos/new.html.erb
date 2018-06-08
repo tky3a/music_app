@@ -19,12 +19,12 @@
         <h2>Category選択</br>
         Category選択のチェックボックス実装</h2>
         <%= field_set_tag 'カテゴリー選択' do %>
-          <div class="field">
+          <!-- <div class="field"> -->
             <%= form_for @video do |f| %>
               <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
                <% b.label { b.check_box + b.text } %>
             <% end %>
-          </div>
+          <!-- </div> -->
         <% end %>
         <% end %>
 
