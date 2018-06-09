@@ -1,0 +1,32 @@
+<div class="commnet-form">
+  <div class="center">
+    <%= field_set_tag 'コメント欄' do %>
+    <% end %>
+  </div>
+<%= form_for ([@video, @video.comments.build]) do |f| %>
+  <div class="form-group">
+    <p>
+      <%= f.label :commenter, class: "control-label col-xs-2" %></br>
+    <div class="col-xs-5">
+      <%= f.text_field :commenter, size: 9 * 4, class: "form-control" %>
+    </div>
+    </p>
+</div>
+</br>
+<div class="form-group"></br>
+  <p>
+    <%= f.label :body, class: "control-label col-xs-2" %></br>
+  <div class="col-xs-5"></br>
+    <%= f.text_area :body, size: "50x6", class: "form-control"%>
+  </div>
+  </p>
+</div>
+  <div class="action">
+    <div class="form-group"></br>
+      <div class="col-xs-offset-2 col-xs-10">
+        <%= f.submit "コメント" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

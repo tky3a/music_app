@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180602043452) do
+ActiveRecord::Schema.define(version: 20180609032634) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "commenter"
+    t.string "body"
+    t.bigint "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_id"], name: "index_comments_on_video_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -64,6 +73,7 @@ ActiveRecord::Schema.define(version: 20180602043452) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "videos"
   add_foreign_key "video_categories", "categories"
   add_foreign_key "video_categories", "videos"
 end

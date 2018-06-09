@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   get '/progre', to:'categories#progre'
 
   # resources :categories
-  resources :videos
+  # resources :videos
 
+  #video内のネストされたリソース としてcommentsを作成
+  resources :videos do
+    resources :comments
+  end
 
 end
