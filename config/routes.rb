@@ -29,4 +29,12 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :videos do
+    member do
+      post "favorites", to: "favorites#create"
+    end
+  end
+
+  resources :favorites, only: [:destroy]
+
 end
