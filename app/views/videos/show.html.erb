@@ -33,9 +33,16 @@
 
       </div>
       <!--コメント一覧フォーム-->
-      <%= render 'layouts/comment_form' %>
-
-
+      <div class="center">
+        <%= field_set_tag 'コメント欄' do %>
+        <% end %>
+      </div>
+      <div class="comments">
+        <%= render 'layouts/comment_form' %>
+        <%= render 'layouts/comments_body' %>
+      </div>
   </div>
 </div>
+
+
 </div>
