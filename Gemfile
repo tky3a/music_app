@@ -17,7 +17,7 @@ gem 'pry-rails'
 
 gem 'bcrypt',         '3.1.11'
 gem 'bootstrap-sass', '3.3.7'
-gem 'bootstrap', '4.1.1'
+# gem 'bootstrap', '4.1.1'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'

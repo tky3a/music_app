@@ -27,3 +27,5 @@
   category_test4 = Category.create(name: "Post Rock")
   # category_test1 = video_test1.categories.create(name: "Rock")
   # category_test2 = video_test1.categories.create(name: "Gt_Rock")
+
+  comments = Comment.create(commenter: "test", body: "test")

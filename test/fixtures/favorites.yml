@@ -2,6 +2,8 @@
 
 one:
   user: one
+  video: one
 
 two:
   user: two
+  video: two

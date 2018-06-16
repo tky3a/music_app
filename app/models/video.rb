@@ -1,13 +1,14 @@
 class Video < ApplicationRecord
+  #お気に入り機能　多対多
+  has_many :favorites
+  has_many :users, through: :favorites
+
   #video,categoryに対して多対多の関係
   has_many :video_categories
   has_many :categories, through: :video_categories
 
 ##commentモデルに対して1対多の関係
   has_many :comments
-  #commentバリデーション
-  validates :body, presence: true,
-            length: { maximum: 255 }
 
   #Videoモデルバリデーション
   validates :youtube_id, presence: true
