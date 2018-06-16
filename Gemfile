@@ -9,6 +9,7 @@ gem 'rails', '~> 5.1.4'
 
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 
+#便利
 gem 'pry-byebug'
 gem 'pry-rails'
 #gem 'better_errors'
