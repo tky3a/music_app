@@ -152,17 +152,30 @@ p {
   margin-top: 20px;
 }
 
-//うまく横並びにできない。。。
-// .comments {
-//   overflow: hidden;
-// }
-//
-// .comment1{
-//   float: left;
-// }
-//
+//コメントフォーム・コメント一覧
+.comments {
+  overflow: hidden;
+  form{
+    width:1200px;
+  }
+}
+
+.comment1{
+  width: 50%;
+  float: left;
+}
+
 .comment2 {
+  width: 500px;
   float: right;
+  margin-top: 20px;
+}
+//ここまでコメント
+
+.btn-primary {
+  a {
+    color: white;
+  }
 }
 
 // .jumbotron {

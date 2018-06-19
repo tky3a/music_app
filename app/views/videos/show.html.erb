@@ -26,10 +26,10 @@
         <!--サムネイル取得方法 <img src="http://img.youtube.com/vi/hTWKbfoikeg/0.jpg" alt="alt here..." /> -->
 
         <h1><%=link_to @video.artist_name + 'の曲',"#" %></h1>
-        <div>
+        <div class="btn btn-primary">
           <%= link_to "お気に入り", favorites_video_path(@video), method: :post %>
         </div>
-        #アーティスト毎のYoutube動画を収集したページを追加予定
+      </br>#アーティスト毎のYoutube動画を収集したページを追加予定
 
 
         #登録したユーザーのみコメントを書き込めるように実装する
