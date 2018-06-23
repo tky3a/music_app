@@ -29,6 +29,9 @@
         <div class="btn btn-primary">
           <%= link_to "お気に入り", favorites_video_path(@video), method: :post %>
         </div>
+        <p id="error"><%= flash[:error] %></p>
+        <p id="success"><%= flash[:success] %></p>
+
       </br>#アーティスト毎のYoutube動画を収集したページを追加予定
 
 
