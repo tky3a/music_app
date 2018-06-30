@@ -25,6 +25,8 @@
   category_test2 = Category.create(name: "Gt Rock")
   category_test3 = Category.create(name: "Emo")
   category_test4 = Category.create(name: "Post Rock")
+  category_test6 = Category.create(name: "Progre")
+  category_test6 = Category.create(name: "Alternative")
   # category_test1 = video_test1.categories.create(name: "Rock")
   # category_test2 = video_test1.categories.create(name: "Gt_Rock")
 

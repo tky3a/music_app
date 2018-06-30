@@ -6,7 +6,7 @@ class Video < ApplicationRecord
   #video,categoryに対して多対多の関係
   has_many :video_categories
   has_many :categories, through: :video_categories
-  validates_associated :categories, :presence => true
+  validates_associated :categories, presence: true #categoryを保存しないとvideoも保存できないとしたい。。
 
 ##commentモデルに対して1対多の関係
   has_many :comments

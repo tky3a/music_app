@@ -28,34 +28,44 @@
 <div class="category">
   <div class="pickup">
     <h3 class="container bg-primary" >ピックアップ動画</h3><!--bootstrapのbg-xxxで背景色が変更-->
+    <div class="video-lists">
     サムネイルを作成して、サムネイルをクリックするとshowページへ飛ぶ様にしたい(実装予定)</br>
     動画、サムネイルで動作が重くなるので、その対策。(実装予定)</br>
-
-    サムネイルを横並びにしたい　CSSでdisplay: inline;　すれば良いと思うのだが…
+    </div>
   </div>
 
   <div class="cate1">
     <h3 class="container bg-success">ロック</h3>
-    <%= render 'iframe/iframe_image' %>
+      <div class="video-lists">
+        <%= render 'iframe/iframe_image' %>
+      </div>
   </div>
 
   <div class="cate2">
     <h3 class="container bg-danger">ギターロック</h3>
+    <div class="video-lists">
 
+    </div>
   </div>
 
   <div class="cate3">
     <h3 class="container bg-primary">ポストロック</h3>
-    <%= render 'iframe/iframe_image' %>
+    <div class="video-lists">
+      <%= render 'iframe/iframe_image' %>
+    </div>
   </div>
 
   <div class="cate4">
     <h3 class="container bg-danger">プログレ</h3>
+    <div class="video-lists">
 
+    </div>
   </div>
 
   <div class="cate5">
     <h3 class="container bg-primary">エモーショナル</h3>
-    <%= render 'iframe/iframe_image' %>
+    <div class="video-lists">
+      <%= render 'iframe/iframe_image' %>
+    </div>
   </div>
 </div>

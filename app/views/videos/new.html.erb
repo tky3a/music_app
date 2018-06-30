@@ -16,8 +16,8 @@
         <%= f.label :music_name %>
         <%= f.text_field :music_name, class: "form-control"%>
 
-        <h2>Category選択</br>
-        Category選択のチェックボックス実装</h2>
+        <!-- <h2>Category選択</br>
+        Category選択のチェックボックス実装</h2> -->
         <%= field_set_tag 'カテゴリー選択' do %>
               <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
                <% b.label { b.check_box + b.text } %>

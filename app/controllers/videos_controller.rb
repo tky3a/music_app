@@ -2,14 +2,17 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
+    @categories = Category.all
   end
 
   def show
     @video = Video.find_by(id: params[:id])
+    @categories = Category.all
   end
 
   def new
     @video = Video.new
+    @categories = Category.all
   end
 
   def create
@@ -23,27 +26,6 @@ class VideosController < ApplicationController
           render 'new'
         end
   end
-
-#page link
-  def rock
-    # if文使えば実装できる？: もしrockというカテゴリーが含まれている場合each do + iframe表示にする
-  end
-
-  def gt_rock
-  end
-
-  def emo
-  end
-
-  def progre
-  end
-
-  def post_rock
-  end
-
-  def alterna
-  end
-
 
 
  #strongparams

@@ -6,23 +6,9 @@ Rails.application.routes.draw do
   # get 'users/show'
 
   root 'videos#index'
+  resources :categories
 
-  # get '/signup', to: 'users#new'
-
-  get '/alterna', to: 'categories#alterna'
-  #
-  get '/emo', to: 'categories#emo'
-  #
-  get '/gt_rock', to: 'categories#gt_rock'
-  #
-  get '/post_rock', to: 'categories#post_rock'
-  #
-  get '/rock', to: 'categories#rock'
-  #
-  get '/progre', to:'categories#progre'
-
-  # resources :categories
-  # resources :videos
+  # get '/categories/:category_id/:id', to: 'categories#show'
 
   #video内のネストされたリソース としてcommentsを作成
   resources :videos do
