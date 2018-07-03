@@ -4,12 +4,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @categories = Category.all
   end
 
   def show
     @user = User.find(params[:id])
-    @categories = Category.all
   end
 
 end

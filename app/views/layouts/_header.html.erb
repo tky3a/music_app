@@ -31,8 +31,8 @@
         <ul class="nav navbar-nav navbar-left">
           <li><%= link_to "ピックアップ", '#' %></li>
           <li><%= link_to "ランキング", '#' %></li>
-          <li> <% @categories.each do |category| %> </li>
-             <li><%= link_to "#{category.name}", "categories/#{category.id}" %></li>
+          <li> <% Category.all.each do |category| %> </li>
+             <li><%= link_to "#{category.name}", category_path(category.id) %></li>
           <% end %>
         </ul>
       </nav>

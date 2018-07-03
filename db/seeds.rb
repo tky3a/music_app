@@ -27,7 +27,10 @@
   category_test4 = Category.create(name: "Post Rock")
   category_test6 = Category.create(name: "Progre")
   category_test6 = Category.create(name: "Alternative")
-  # category_test1 = video_test1.categories.create(name: "Rock")
-  # category_test2 = video_test1.categories.create(name: "Gt_Rock")
+
+#リレーションシップ
+  VideoCategory.create(video_id: 1, category_id: 5)
+  VideoCategory.create(video_id: 2, category_id: 2)
+
 
   comments = Comment.create(commenter: "test", body: "test")

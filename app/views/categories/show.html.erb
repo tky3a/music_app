@@ -1,5 +1,23 @@
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= @category.name %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="categories_list">
+        <ul>
+          <% @category.videos.each do |video| %>
+            <div class="categories">
+            <li><%=link_to video.music_name, video_path(video.id) %></li>
+            <li><%= video.artist_name%></li>
+            <li><% iframe = content_tag(
+                  :iframe,
+                  '', # empty body
+                  width: 130,
+                  height: 100,
+                  src: "https://i.ytimg.com/vi/#{video.youtube_id}/1.jpg",
+                  frameborder: 0,
+                  allowfullscreen: true
+                ) %>
+                <%= content_tag(:div, iframe, class: 'youtube-container-cate') %></li>
+              </div>
+          <% end %>
+        </ul>
+      </div>
+  </div>
+</div>

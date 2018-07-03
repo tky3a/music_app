@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # get '/categories/:category_id/:id', to: 'categories#show'
 
   #video内のネストされたリソース としてcommentsを作成
+
+
   resources :videos do
     resources :comments
   end
