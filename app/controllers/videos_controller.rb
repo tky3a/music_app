@@ -2,6 +2,11 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
+    @category = Category.find_by(id: params[:id])
+
+    #ransack
+    @q = Video.ransack(params[:q])
+    @vs = @q.result(distinct: true)
   end
 
   def show
@@ -24,10 +29,21 @@ class VideosController < ApplicationController
         end
   end
 
+  #ransack
+  def search
+    @videos = Video.all
+    @q = Video.search(params[:q])
+    @vs = @q.result(distinct: true)
+  end
+
 
  #strongparams
   private
     def video_params
         params.require(:video).permit(:artist_name, :youtube_id, :music_name, { category_ids: [] })
+    end
+
+    def search_params
+        params.require(:q).permit!
     end
 end

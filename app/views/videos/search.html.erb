@@ -1,0 +1,17 @@
+<%= search_form_for @q, url:search_path do |f| %>
+<%= f.search_field :music_name_cont %>
+ <%= f.submit "音楽検索" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :music_name) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @videos.each do |video| %>
+      <p><%= video.music_name %></p>
+    <% end %>
+  </tbody>
+</table>

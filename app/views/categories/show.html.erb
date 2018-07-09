@@ -4,7 +4,7 @@
           <% @category.videos.each do |video| %>
             <div class="categories">
             <li><%=link_to video.music_name, video_path(video.id) %></li>
-            <li><%= video.artist_name%></li>
+            <li><%=link_to video.artist_name, video_path(video.id)%></li>
             <li><% iframe = content_tag(
                   :iframe,
                   '', # empty body

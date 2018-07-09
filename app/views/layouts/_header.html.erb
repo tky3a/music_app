@@ -5,8 +5,15 @@
         <div class="col-md-6">
           <div class="container">
             <form class="form-inline">
-            <%= text_field_tag :search, "", class: "form-control", size: 6*5 %><!--あとで検索するparamsを与える-->
-            <%= submit_tag "音楽検索"%>
+            <!-- <%= text_field_tag :search, "", class: "form-control", size: 6*5 %>
+                 <%= submit_tag "音楽検索"%> -->
+            <!-- Ransack検索フォーム実装 -->
+            <%= search_form_for Video.search, url:search_path do |f| %>
+            <%= f.search_field :music_name_cont, class: "form-control", size: 6*5 %>
+             <%= f.submit "音楽検索" %>
+            <% end %>
+
+
             </form>
           </div>
 

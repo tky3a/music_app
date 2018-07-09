@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+#検索機能
+gem 'ransack'
 #認証機能
 gem 'devise'
 gem 'omniauth-twitter'
