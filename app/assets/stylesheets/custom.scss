@@ -201,7 +201,7 @@ legend{
 // categories/show
 .categories_list{
   height: 250px;
-  overflow: scroll;
+  // overflow: scroll;
   .categories{
     float: left;
     width: 16%;
@@ -213,9 +213,29 @@ legend{
   }
 }
 
-// .jumbotron {
-//   // background-image: url(image03.jpg);
-//   // background-size: cover;
-//   // background-position: center center;
-//   // background-repeat: no-repeat;
-// }
+//カルーセル設定
+#rock-carousel{
+  .carousel-control.right {
+    background-image: none;
+    }
+  .carousel-control{
+     color: #2793e6;
+   }
+  }
+
+#pop-carousel{
+  .carousel-control.right {
+    background-image: none;
+      }
+  .carousel-control{
+    color: #2793e6;
+     }
+    }
+
+.carousel{
+   width:100%;  /*サイズ指定*/
+   margin:auto;
+}
+.carousel img{
+   width:100%;
+}

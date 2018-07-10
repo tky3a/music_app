@@ -6,12 +6,11 @@
   <div id="video-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
 
     <!-- 何枚目かの画像かを表すインディケーター -->
-    <ol class="carousel-indicators">
-      <li data-target="#video-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#video-carousel" data-slide-to="1" class=""></li>
-      <li data-target="#video-carousel" data-slide-to="2" class=""></li>
-    </ol>
-
+  <ol class="carousel-indicators">
+    <li data-target="#video-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#video-carousel" data-slide-to="1" class=""></li>
+    <li data-target="#video-carousel" data-slide-to="2" class=""></li>
+  </ol>
     <!-- 実際の画像の表示処理 -->
     <div class="carousel-inner">
       <div class="item active">    <!-- activeをつけたものがページ表示時に表示される -->
@@ -48,11 +47,14 @@
     </div>
   </div>
 
+  <div class="cate0">
+    <h3 class="container bg-danger">ポップ</h3>
+    <%= render 'layouts/homeparts/pop_list'%>
+  </div>
+
   <div class="cate1">
     <h3 class="container bg-success">ロック</h3>
-      <div class="video-lists">
-        <%= render 'iframe/iframe_image' %>
-      </div>
+    <%= render 'layouts/homeparts/rock_list'%>
   </div>
 
   <div class="cate2">
