@@ -2,11 +2,22 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
-    @category = Category.find_by(id: params[:id])
+    @categories = Category.all
 
     #ransack
     @q = Video.ransack(params[:q])
     @vs = @q.result(distinct: true)
+
+    @bgc = [name: "bg-danger",
+            name: "bg-success",
+            name: "bg-danger",
+            name: "bg-success",
+            name: "bg-danger",
+            name: "bg-success",
+            name: "bg-danger",
+            name: "bg-success"]
+    i = ++1
+
   end
 
   def show

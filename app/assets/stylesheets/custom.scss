@@ -18,6 +18,16 @@
   overflow:hidden;
 }
 
+@mixin title_color{
+  font-size: 0.9em;
+  letter-spacing: -1px;
+  text-decoration: none;
+    }
+ @mixin title_color_hover{
+   color: #fff;
+   text-decoration: none;
+ }
+
 
 /* mixins, valiables, etc */
 $light-gray: #777;
@@ -213,24 +223,213 @@ legend{
   }
 }
 
-//カルーセル設定
-#rock-carousel{
-  .carousel-control.right {
-    background-image: none;
-    }
-  .carousel-control{
-     color: #2793e6;
-   }
-  }
+// //カルーセル設定
+// #vc-carousel0{
+//   .carousel-control.right {
+//     background-image: none;
+//       }
+//   .carousel-control{
+//     color: #2793e6;
+//      }
+//     }
+// #vc-carousel1{
+//   .carousel-control.right {
+//     background-image: none;
+//     }
+//   .carousel-control{
+//      color: #2793e6;
+//    }
+//   }
+//
+// #vc-carousel2{
+//   .carousel-control.right {
+//     background-image: none;
+//       }
+//   .carousel-control{
+//     color: #2793e6;
+//      }
+//     }
+//
+// #vc-carousel3{
+//   .carousel-control.right {
+//     background-image: none;
+//       }
+//   .carousel-control{
+//     color: #2793e6;
+//         }
+//     }
+//
+// #vc-carousel4{
+//   .carousel-control.right {
+//     background-image: none;
+//       }
+//   .carousel-control{
+//     color: #2793e6;
+//       }
+//     }
+//
+// #vc-carousel5{
+//   .carousel-control.right {
+//     background-image: none;
+//       }
+//   .carousel-control{
+//     color: #2793e6;
+//       }
+//     }
+//
+// #vc-carousel6{
+//   .carousel-control.right {
+//     background-image: none;
+//       }
+//   .carousel-control{
+//     color: #2793e6;
+//       }
+//     }
 
-#pop-carousel{
-  .carousel-control.right {
-    background-image: none;
-      }
-  .carousel-control{
-    color: #2793e6;
+
+/*indexのカテゴリー一覧　タイトルカラー*/
+.cate{
+     .cate-title0 a{
+       @include title_color;
      }
-    }
+     .cate-title0 a:hover {
+       @include title_color_hover;
+     }
+     .cate-title1 a{
+       @include title_color;
+     }
+     .cate-title1 a:hover {
+       @include title_color_hover;
+     }
+     .cate-title2 a{
+       @include title_color;
+     }
+     .cate-title2 a:hover {
+       @include title_color_hover;
+     }
+     .cate-title3 a{
+       @include title_color;
+     }
+     .cate-title3 a:hover {
+       @include title_color_hover;
+     }
+     .cate-title4 a{
+       @include title_color;
+     }
+     .cate-title4 a:hover {
+       @include title_color_hover;
+     }
+     .cate-title5 a{
+       @include title_color;
+     }
+     .cate-title5 a:hover {
+       @include title_color_hover;
+     }
+     .cate-title6 a{
+       @include title_color;
+     }
+     .cate-title6 a:hover {
+       @include title_color_hover;
+     }
+    .cate0{
+      .bg-danger{
+     }}
+
+    .cate1{
+      .bg-danger{
+        background-color:#37be77;
+     }}
+
+    .cate2{
+      .bg-danger{
+        background-color:#e2e787;
+     }}
+
+    .cate3{
+      .bg-danger{
+       background-color: darken(#428bca, 6.5%);
+     }}
+
+    .cate4{
+     .bg-danger{
+     }}
+
+    .cate5{
+     .bg-danger{
+      background-color :#ffc107!important;
+       }}
+
+    .cate6{
+      .bg-danger{
+      background-color :#18b7d2;
+       }}
+
+      //カルーセル設定
+      #vc-carousel0{
+         .carousel-control.right {
+           background-image: none;
+             }
+         .carousel-control{
+           color: #2793e6;
+            }
+           }
+       #vc-carousel1{
+         .carousel-control.right {
+           background-image: none;
+           }
+         .carousel-control{
+            color: #2793e6;
+          }
+         }
+
+       #vc-carousel2{
+         .carousel-control.right {
+           background-image: none;
+             }
+         .carousel-control{
+           color: #2793e6;
+            }
+           }
+
+       #vc-carousel3{
+         .carousel-control.right {
+           background-image: none;
+             }
+         .carousel-control{
+           color: #2793e6;
+               }
+           }
+
+       #vc-carousel4{
+         .carousel-control.right {
+           background-image: none;
+             }
+         .carousel-control{
+           color: #2793e6;
+             }
+           }
+
+       #vc-carousel5{
+         .carousel-control.right {
+           background-image: none;
+             }
+         .carousel-control{
+           color: #2793e6;
+             }
+           }
+
+       #vc-carousel6{
+         .carousel-control.right {
+           background-image: none;
+             }
+         .carousel-control{
+           color: #2793e6;
+             }
+           }
+   }
+/*ここまでindexのカテゴリー一覧　タイトルカラー*/
+
+
 
 .carousel{
    width:100%;  /*サイズ指定*/

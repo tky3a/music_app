@@ -37,7 +37,6 @@
 
   </div>
 
-
 <div class="category">
   <div class="pickup">
     <h3 class="container bg-primary" >ピックアップ動画</h3><!--bootstrapのbg-xxxで背景色が変更-->
@@ -47,54 +46,9 @@
     </div>
   </div>
 
-  <div class="cate0">
-    <h3 class="container bg-danger">ポップ</h3>
-    <%= render 'layouts/homeparts/pop_list'%>
-  </div>
+<!-- 下記記述をControllerに描きたいけどどうすればよいかわからない！ -->
+  <% i = 1 %>
 
-  <div class="cate1">
-    <h3 class="container bg-success">ロック</h3>
-    <%= render 'layouts/homeparts/rock_list'%>
+  <div class="cate">
+    <%= render 'videos/homeparts/videos_carousel_list'%>
   </div>
-
-  <div class="cate2">
-    <h3 class="container bg-danger">ギターロック</h3>
-    <div class="video-lists">
-      <% if @category === 2 %>
-      <%= render 'iframe/iframe_image' %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="cate3">
-    <h3 class="container bg-primary">ポストロック</h3>
-    <div class="video-lists">
-      <%= render 'iframe/iframe_image' %>
-    </div>
-  </div>
-
-  <div class="cate4">
-    <h3 class="container bg-danger">プログレ</h3>
-    <div class="video-lists">
-      <%= render 'iframe/iframe_image' %>
-    </div>
-  </div>
-
-  <div class="cate5">
-    <h3 class="container bg-primary">エモーショナル</h3>
-    <div class="video-lists">
-      <%= render 'iframe/iframe_image' %>
-    </div>
-  </div>
-</div>
-
-<ul>
-  <% if @category %>
-  <% @video.each do |video| %>
-    <div class="categories">
-    <li><%=link_to video.music_name, video_path(video.id) %></li>
-    <li><%=link_to video.artist_name, video_path(video.id)%></li>
-      </div>
-  <% end %>
-  <% end %>
-</ul>
