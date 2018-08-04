@@ -7,17 +7,6 @@ class VideosController < ApplicationController
     #ransack
     @q = Video.ransack(params[:q])
     @vs = @q.result(distinct: true)
-
-    @bgc = [name: "bg-danger",
-            name: "bg-success",
-            name: "bg-danger",
-            name: "bg-success",
-            name: "bg-danger",
-            name: "bg-success",
-            name: "bg-danger",
-            name: "bg-success"]
-    i = ++1
-
   end
 
   def show
