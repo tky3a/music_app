@@ -8,12 +8,14 @@
             <!-- <%= text_field_tag :search, "", class: "form-control", size: 6*5 %>
                  <%= submit_tag "音楽検索"%> -->
             <!-- Ransack検索フォーム実装 -->
-            <%= search_form_for Video.search, url:search_path do |f| %>
+            <!-- <%= search_form_for Video.search, url:search_path do |f| %>
             <%= f.search_field :music_name_cont, class: "form-control", size: 6*5 %>
              <%= f.submit "音楽検索" %>
+            <% end %> -->
+            <%= search_form_for @search, url: search_path do |f| %>
+              <%= f.search_field :music_name_cont, class: "form-control", size: 6 * 5 %>
+              <%= f.submit "音楽検索" %>
             <% end %>
-
-
             </form>
           </div>
 

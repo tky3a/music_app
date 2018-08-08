@@ -1,4 +1,4 @@
-<%= search_form_for @q, url:search_path do |f| %>
+<%= search_form_for @search, url:search_path do |f| %>
 <%= f.search_field :music_name_cont %>
  <%= f.submit "音楽検索" %>
 <% end %>
@@ -6,7 +6,7 @@
 <table>
   <thead>
     <tr>
-      <th><%= sort_link(@q, :music_name) %></th>
+      <th><%= sort_link(@search, :music_name) %></th>
     </tr>
   </thead>
   <tbody>

@@ -18,4 +18,13 @@ class Video < ApplicationRecord
 
   #videoが更新されたらVideo_categoriesも更新される
   accepts_nested_attributes_for :video_categories
+
+  #scope設定
+  scope :videos_by_category, -> (liimt){
+    videos = none #videosという空のオブジェクトを取得
+    this.each do |category|
+      videos += category.videos.limit(10) #取得する件数を制限
+    end
+    return videos
+  }
 end

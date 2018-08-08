@@ -6,6 +6,9 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(id: params[:id])
+    @search = Video.ransack(params[:q])
+    @categories = Category.all
+    @videos = @search.result(distinct: true) #重複していないものを取り出す
   end
 end
 

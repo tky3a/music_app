@@ -1,12 +1,16 @@
 class VideosController < ApplicationController
 
   def index
-    @videos = Video.all
+    # @videos = Video.all
     @category = Category.find_by(id: params[:id])
 
     #ransack
-    @q = Video.ransack(params[:q])
-    @vs = @q.result(distinct: true)
+    @search = Video.ransack(params[:q])
+    @categories = Category.all
+    @videos = @search.result(distinct: true) #重複していないものを取り出す
+    if @video
+      redirect_to search_path
+    end
   end
 
   def show
