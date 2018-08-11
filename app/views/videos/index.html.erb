@@ -2,43 +2,40 @@
 <div class="center jumbotron">
   <h1>Gems Sound</h1>
 
-    <% @videos.shuffle.first(1).each do |video| %>
-    <%=link_to "#{video.artist_name}","videos/#{video.id}" %>
-     /
-    <%=link_to "#{video.music_name}","videos/#{video.id}" %>
-    <% iframe = content_tag(
-      :iframe,
-      '', # empty body
-      width: 560,
-      height: 315,
-      src: "https://www.youtube.com/embed/#{video.youtube_id}?rel=0",
-      # src: "https://i.ytimg.com/vi/#{video.youtube_id}/1.jpg",
-      frameborder: 0,
-      allowfullscreen: true
-    ) %>
-    <%= content_tag(:div, iframe, class: 'youtube-container') %>
-    <% end %>
+  <!-- カルーセル -->
+  <div id="video-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+    <!-- 何枚目かの画像かを表すインディケーター -->
+  <ol class="carousel-indicators">
+    <li data-target="#video-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#video-carousel" data-slide-to="1" class=""></li>
+    <li data-target="#video-carousel" data-slide-to="2" class=""></li>
+  </ol>
+    <!-- 実際の画像の表示処理 -->
+    <div class="carousel-inner">
+      <div class="item active">    <!-- activeをつけたものがページ表示時に表示される -->
+        <%= render 'iframe/shuffle_video' %>
+      </div>
+      <div class="item">
+        <%= render 'iframe/shuffle_video' %>
+      </div>
+      <div class="item">
+        <%= render 'iframe/shuffle_video' %>
+      </div>
+    </div>
+
+    <!-- 前の画像へ戻るための矢印ポインタ -->
+    <a class="left carousel-control" href="#video-carousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+
+    <!-- 次の画像へ進むための矢印ポインタ -->
+    <a class="right carousel-control" href="#video-carousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
 
-  <%= search_form_for @search do |f| %>
-    <%= f.label :artist_name_cont, "アーティスト" %>
-    <%= f.search_field :artist_name_cont %>
-    <div class="actions">
-      <%= f.submit "音楽検索" %>
-    </div>
-  <% end %>
-<div class="hoge">
-  <% @videos.each do |video| %>
-  <table>
-    <th><%=video.music_name %>: </th>
-    <td><%=video.artist_name %></td>
-  </table>
-
-  <% end %>
-</div>
-
-
-
+  </div>
 
 <div class="category">
   <div class="pickup">
@@ -49,51 +46,9 @@
     </div>
   </div>
 
-  <div class="cate1">
-    <h3 class="container bg-success">ロック</h3>
-      <div class="video-lists">
-        <%= render 'iframe/iframe_image' %>
-      </div>
-  </div>
+<!-- 下記記述をControllerに描きたいけどどうすればよいかわからない！ -->
+  <% i = 1 %>
 
-  <div class="cate2">
-    <h3 class="container bg-danger">ギターロック</h3>
-    <div class="video-lists">
-      <% if @category === 2 %>
-      <%= render 'iframe/iframe_image' %>
-      <% end %>
-    </div>
+  <div class="cate">
+    <%= render 'videos/homeparts/videos_carousel_list'%>
   </div>
-
-  <div class="cate3">
-    <h3 class="container bg-primary">ポストロック</h3>
-    <div class="video-lists">
-      <%= render 'iframe/iframe_image' %>
-    </div>
-  </div>
-
-  <div class="cate4">
-    <h3 class="container bg-danger">プログレ</h3>
-    <div class="video-lists">
-      <%= render 'iframe/iframe_image' %>
-    </div>
-  </div>
-
-  <div class="cate5">
-    <h3 class="container bg-primary">エモーショナル</h3>
-    <div class="video-lists">
-      <%= render 'iframe/iframe_image' %>
-    </div>
-  </div>
-</div>
-
-<ul>
-  <% if @category %>
-  <% @video.each do |video| %>
-    <div class="categories">
-    <li><%=link_to video.music_name, video_path(video.id) %></li>
-    <li><%=link_to video.artist_name, video_path(video.id)%></li>
-      </div>
-  <% end %>
-  <% end %>
-</ul>

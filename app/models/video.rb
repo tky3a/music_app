@@ -21,7 +21,7 @@ class Video < ApplicationRecord
 
   #scope設定
   scope :videos_by_category, -> (liimt){
-    videos = none #videosという空のオブジェクトを取得
+    videos = none #videos 空のオブジェクトを取得
     this.each do |category|
       videos += category.videos.limit(10) #取得する件数を制限
     end

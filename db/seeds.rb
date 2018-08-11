@@ -30,6 +30,10 @@
                         artist_name: "the satellites",
                         music_name: "命の唄")
 
+  video_test7 = Video.create(youtube_id: "-foqDiKP6JY",
+                        artist_name: "Hump Back",
+                        music_name: "ゆれる")
+
   category_test1 = Category.create(name: "Pop")
   category_test1 = Category.create(name: "Rock")
   category_test2 = Category.create(name: "Gt Rock")
@@ -51,7 +55,8 @@
   VideoCategory.create(video_id: 5, category_id: 4)
   VideoCategory.create(video_id: 6, category_id: 2)
   VideoCategory.create(video_id: 6, category_id: 3)
-
+  VideoCategory.create(video_id: 7, category_id: 3)
+  VideoCategory.create(video_id: 7, category_id: 4)
 
   comments = Comment.create(commenter: "test", body: "test")
   #
@@ -133,13 +138,6 @@
   # yonige Official Channel
   # 視聴回数 74万 回
   #
-  # Hump Back - 「拝啓、少年よ」Music Video
-  # Hump Back Official
-  # 視聴回数 102万 回
-  #
-  # ポルカドットスティングレイ「ICHIDAIJI」MV
-  # ポルカドットスティングレイ
-  # 視聴回数 326万 回
   #
   # 尾崎世界観作詞・作曲FM802「栞」MV フルver.（FM802 × TSUTAYA ACCESS! キャンペーンソング）
   # FM802
