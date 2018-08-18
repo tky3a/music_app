@@ -1,16 +1,30 @@
 class VideosController < ApplicationController
 
   def index
-    # @videos = Video.all
+    @videos = Video.all
     @category = Category.find_by(id: params[:id])
 
     #ransack
-    @search = Video.ransack(params[:q])
-    @categories = Category.all
-    @videos = @search.result(distinct: true) #重複していないものを取り出す
-    if @video
-      redirect_to search_path
+    @search = Video.ransack(params[:q]) #videoパラメーターを取得
+    @categories = Category.all #カテゴリー取得
+    @videos_search = @search.result(distinct: true) #重複していないものを取り出す
+    if @videos_search.presence
+      render action: :search
+    else
+      redirect_to root_path
     end
+  end
+
+  def search
+    @videos = Video.all
+    @search = Video.search(search_params)
+    @videos_search = @search.result(distinct: true)
+  end
+
+  #ransack
+  def search
+    # @q = Video.search(params[:q])
+    # @vs = @q.result(distinct: true)
   end
 
   def show
@@ -33,12 +47,7 @@ class VideosController < ApplicationController
         end
   end
 
-  #ransack
-  def search
-    @videos = Video.all
-    @q = Video.search(params[:q])
-    @vs = @q.result(distinct: true)
-  end
+
 
 
  #strongparams
@@ -48,6 +57,6 @@ class VideosController < ApplicationController
     end
 
     def search_params
-        params.require(:q).permit!
+        params.require(:q).permit
     end
 end

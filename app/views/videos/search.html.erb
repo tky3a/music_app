@@ -1,17 +1,16 @@
-<%= search_form_for @search, url:search_path do |f| %>
-<%= f.search_field :music_name_cont %>
- <%= f.submit "音楽検索" %>
+<% @videos.each do |video| %>
+  <div class="video-list">
+    <p><%= link_to "#{video.artist_name}","videos/#{video.id}" %></p>
+    <p><%= link_to "#{video.music_name}","videos/#{video.id}" %></p>
+    <p><% iframe = content_tag(
+      :iframe,
+      '', # empty body
+      width: 130,
+      height: 100,
+      src: "https://i.ytimg.com/vi/#{video.youtube_id}/1.jpg",
+      frameborder: 0,
+      allowfullscreen: true
+    ) %>
+    <%= content_tag(:div, iframe, class: 'youtube-container-cate') %></p>
+    </div>
 <% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th><%= sort_link(@search, :music_name) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @videos.each do |video| %>
-      <p><%= video.music_name %></p>
-    <% end %>
-  </tbody>
-</table>

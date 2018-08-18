@@ -85,6 +85,10 @@ GEM
       guard-compat (~> 1.2)
       minitest (>= 3.0)
     hashie (3.5.7)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -223,6 +227,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (0.1.1)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -245,6 +250,8 @@ DEPENDENCIES
   devise
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
+  hirb
+  hirb-unicode
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   listen (= 3.1.5)

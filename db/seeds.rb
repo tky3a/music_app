@@ -34,6 +34,10 @@
                         artist_name: "Hump Back",
                         music_name: "ゆれる")
 
+  video_test8 = Video.create(youtube_id: "hA-HJmESJyw",
+                        artist_name: "Ivy to Fraudulent Game",
+                        music_name: "she see sea")
+
   category_test1 = Category.create(name: "Pop")
   category_test1 = Category.create(name: "Rock")
   category_test2 = Category.create(name: "Gt Rock")
@@ -57,6 +61,10 @@
   VideoCategory.create(video_id: 6, category_id: 3)
   VideoCategory.create(video_id: 7, category_id: 3)
   VideoCategory.create(video_id: 7, category_id: 4)
+  VideoCategory.create(video_id: 8, category_id: 5)
+  VideoCategory.create(video_id: 8, category_id: 6)
+  VideoCategory.create(video_id: 8, category_id: 7)
+
 
   comments = Comment.create(commenter: "test", body: "test")
   #

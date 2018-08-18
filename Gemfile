@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#scope
+gem 'hirb'         # 出力結果を表として出力するgem
+gem 'hirb-unicode'  # マルチバイト文字の表示を補正するgem
+
 #検索機能
 gem 'ransack'
 #認証機能

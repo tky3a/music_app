@@ -11,10 +11,10 @@
     </ol>
     <div class="carousel-inner">
       <div class="item active">
-        <%= render 'iframe/iframe_image' %>
+        <%= render 'iframe/iframe_image', videos: category.videos.limit(10) %>
       </div>
       <div class="item">
-        <%= render 'iframe/iframe_image' %>
+        <%= render 'iframe/iframe_image', videos: category.videos.limit(10) %>
       </div>
     </div>
     <a class="right carousel-control" href="#vc-carousel<%= ++i %>" data-slide="next">

@@ -3,10 +3,17 @@ class ApplicationController < ActionController::Base
   before_action :configre_permitted_parameters, if: :devise_controller?
   before_action :set_search
 
+  #ヘッダーで検索するパラメーターを取得。
   def set_search
-    @search = Video.ransack(params[:q]) #Videoのカラムを@searchに代入
-    # @categories = Category.all
+    @videos = Video.all
+    @category = Category.find_by(id: params[:id])
+
+    #ransack
+    @search = Video.ransack(params[:q])
     @videos = @search.result(distinct: true) #重複していないものを取り出す
+    if @video
+      redirect_to search_path
+    end
   end
 
   def search

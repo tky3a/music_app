@@ -1,4 +1,4 @@
-<% @videos.shuffle.first(5).each do |video| %>
+<% videos.shuffle.first(5).each do |video| %>
   <div class="video-list">
     <p><%= link_to "#{video.artist_name}","videos/#{video.id}" %></p>
     <p><%= link_to "#{video.music_name}","videos/#{video.id}" %></p>
