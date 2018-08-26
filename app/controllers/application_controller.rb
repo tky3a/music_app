@@ -1,24 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configre_permitted_parameters, if: :devise_controller?
-  before_action :set_search
+  before_action :set_search #(headerに検索を置いている為、videos以外のページでエラーになってしまう為設定)
 
   #ヘッダーで検索するパラメーターを取得。
   def set_search
-    @videos = Video.all
-    @category = Category.find_by(id: params[:id])
-
     #ransack
-    @search = Video.ransack(params[:q])
-    @videos = @search.result(distinct: true) #重複していないものを取り出す
-    if @video
-      redirect_to search_path
-    end
-  end
-
-  def search
-    @search = Video.search(search_params)
-    @videos = @search.result(distinct: true)
+    @search = Video.ransack(params[:q]) #Video.allのransaku検索
+    # @videos = @search.result(distinct: true) #重複していないものを取り出す
   end
 
 
@@ -33,10 +22,6 @@ class ApplicationController < ActionController::Base
   # ログインしているユーザーはshow,ログインしてない場合はログインページに遷移
   def sign_in_required
     direct_to new_user_session_url unless user_signed_in?
-  end
-
-  def search_params
-    params.require(:q).permit!
   end
 
     #ストロングパラメーター
