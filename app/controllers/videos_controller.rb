@@ -1,31 +1,18 @@
 class VideosController < ApplicationController
 
   def index
-    @videos = Video.all
     @category = Category.find_by(id: params[:id])
 
     #ransack
-    @search = Video.ransack(params[:q]) #videoパラメーターを取得
+    @search = Video.ransack(params[:q]) #videoパラメーターを取得(検索条件)
     @categories = Category.all #カテゴリー取得
-    @videos_search = @search.result(distinct: true) #重複していないものを取り出す
-    if @videos_search.presence
+    @videos = @search.result(distinct: true) #重複していないものを取り出す(検索結果)
+    if params[:q].present? #ransackの検索パラメーターが存在している場合searchへrender
       render action: :search
-    else
-      redirect_to root_path
     end
   end
 
-  def search
-    @videos = Video.all
-    @search = Video.search(search_params)
-    @videos_search = @search.result(distinct: true)
-  end
-
   #ransack
-  def search
-    # @q = Video.search(params[:q])
-    # @vs = @q.result(distinct: true)
-  end
 
   def show
     @video = Video.find_by(id: params[:id])
