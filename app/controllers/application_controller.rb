@@ -10,8 +10,6 @@ class ApplicationController < ActionController::Base
     # @videos = @search.result(distinct: true) #重複していないものを取り出す
   end
 
-
-
   #ログイン時にusersのshowに飛ばす
   def after_sign_in_path_for(resource)
     # users_path
